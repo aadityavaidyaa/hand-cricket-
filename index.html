@@ -1309,7 +1309,7 @@ async function createRoom(){
     try{
       const r=await api('/api/room/create',{setup});
       ME.roomId=r.roomId;
-      document.getElementById('share-url').textContent=`http://${r.ip}:${r.port}/?room=${r.roomId}`;
+     document.getElementById('share-url').textContent=`${window.location.origin}/?room=${r.roomId}`;
       show('lobby');connectSSE();
       ME._pendingTournConfig=config;
     }catch(e){alert('Error: '+e.message);}
@@ -1332,7 +1332,7 @@ async function createRoom(){
   try{
     const r=await api('/api/room/create',{setup});
     ME.roomId=r.roomId;
-    document.getElementById('share-url').textContent=`http://${r.ip}:${r.port}/?room=${r.roomId}`;
+    document.getElementById('share-url').textContent=`${window.location.origin}/?room=${r.roomId}`;
     show('lobby');connectSSE();
   }catch(e){alert('Error: '+e.message);}
 }
