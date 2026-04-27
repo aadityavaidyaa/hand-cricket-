@@ -1,0 +1,4 @@
+[deploy]
+healthcheckPath = "/api/info"
+healthcheckTimeout = 30
+restartPolicyType = "always"
